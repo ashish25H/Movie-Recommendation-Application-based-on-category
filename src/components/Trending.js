@@ -26,7 +26,7 @@ function Trending() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((currentIndex) => (currentIndex + 1) % data.length);
-    }, 5000); // 2000ms = 2s
+    }, 2000); // 1000ms = 1s
 
     return () => clearInterval(intervalId);
   }, [data]);
@@ -35,9 +35,13 @@ function Trending() {
     "https://image.tmdb.org/t/p/w220_and_h330_face" +
     data[currentIndex]?.poster_path;
 
+  const passInfo = {
+    id: data[currentIndex]?.id,
+  };
+
   return (
     <>
-      <Link to="/moviedetails">
+      <Link to={{ pathname: "/moviedetails", search: `?id=${passInfo.id}` }}>
         <img className="w-full rounded-xl p-5" src={currentImage} alt="image" />
       </Link>
     </>
