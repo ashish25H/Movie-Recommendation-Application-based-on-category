@@ -60,6 +60,11 @@ function MovieDetails() {
           <p className="pt-2 text-[#758283]">{movieData.overview}</p>
         </div>
       </div>
+
+      <div className="p-3">
+        <button className="bg-[#CAD5E2] text-[#242B2E] px-4 py-2 font-semibold rounded-md">Want to Watch</button>
+        <button className="bg-[#CAD5E2] text-[#242B2E] px-4 py-2 font-semibold rounded-md ml-2">Favorite</button>
+      </div>
     </div>
   );
 }
